@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--  Last Published: Tue Nov 07 2023 05:03:30 GMT+0000 (Coordinated Universal Time)  -->
+<!DOCTYPE html><!--  Last Published: Mon Nov 20 2023 20:09:52 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="65453aa7cc19ee5ed42a6986" data-wf-site="650dfac601d3e33858cb7da0">
 <head>
   <meta charset="utf-8">
@@ -40,12 +40,70 @@ window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-FG731W2C09');
+var timer;
+// CURRENT DATE AND TIME
+var now = new Date()
+// OFFSET FOR Greenwich Meantime Time from UTC - this will need to be adjusted to whatever timezone you are posting the dates in - fore example, US Eastern Time would be -240
+var offset = now.getTimezoneOffset() - 300;
+// SET DATE TO SPECIFIC DAY IN THE FUTURE
+// MONTHS go from 0 to 11: January is 0, February is 1, and so on
+var then = new Date(2023, 11, 22, 00, 00, 0, 0);
+// COUNT DOWN TO 3 DAYS IN THE FUTURE (259,200,000 = 1000 * 60 * 60 * 24 * 3)
+// var then = now.getTime() + 259200000;
+var compareDate = new Date(then) - now.getDate() - (offset * 60 * 1000);
+timer = setInterval(function() {
+  timeBetweenDates(compareDate);
+}, 1000);
+function timeBetweenDates(toDate) {
+  var dateEntered = new Date(toDate);
+  var now = new Date();
+  var difference = dateEntered.getTime() - now.getTime();
+  if (difference <= 0) {
+    $("#days").text("0");
+    $("#hours").text("0");
+    $("#minutes").text("0");
+    $("#seconds").text("0");
+  } else {
+    var seconds = Math.floor(difference / 1000);
+    var minutes = Math.floor(seconds / 60);
+    var hours = Math.floor(minutes / 60);
+    var days = Math.floor(hours / 24);
+    hours %= 24;
+    minutes %= 60;
+    seconds %= 60;
+    $("#days").text(days);
+    $("#hours").text(hours);
+    $("#minutes").text(minutes);
+    $("#seconds").text(seconds);
+  }
+}
 </script>
   <!--   Inside head tag ends   -->
 </head>
 <body data-scroll-time="0.75" class="lp-body">
   <div id="Hero" class="lp-section">
     <div class="lp-container">
+      <div class="countdown-outer">
+        <div class="lp-banner-description lp-text-gradient"><strong>Time is running out! Deal ENDS </strong><strong>Dec 22, 12 AM EST</strong></div>
+        <div class="countdown-row">
+          <div class="countdown-block">
+            <div id="days" class="countdown-time lp-text-gradient">00</div>
+            <div class="countdown-detail">Days</div>
+          </div>
+          <div class="countdown-block">
+            <div id="hours" class="countdown-time lp-text-gradient">00</div>
+            <div class="countdown-detail">Hours</div>
+          </div>
+          <div class="countdown-block">
+            <div id="minutes" class="countdown-time lp-text-gradient">00</div>
+            <div class="countdown-detail">Min</div>
+          </div>
+          <div class="countdown-block">
+            <div id="seconds" class="countdown-time lp-text-gradient">00</div>
+            <div class="countdown-detail">Sec</div>
+          </div>
+        </div>
+      </div>
       <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="lp-header w-nav">
         <div class="lp-header-color-highlight"></div>
         <a href="https://typogram.co/" id="w-node-_4c373020-10b3-95df-098e-50f27313f326-d42a6986" class="lp-logo w-nav-brand">
@@ -76,10 +134,17 @@ gtag('config', 'G-FG731W2C09');
           </div>
         </div>
         <div id="w-node-bc84c1e7-7271-01de-c8a3-fd00c4409081-d42a6986" class="div-block-3">
-          <h2 class="lp-hero-title-hand-writing">No Design Experience <br>Required!</h2><img src="images/blackFridaySticker-5.svg" loading="lazy" alt="" id="w-node-b1383034-7da8-6a88-abe0-d5684b6225e5-d42a6986" width="70" class="lp-sticker">
+          <h2 class="lp-hero-title-hand-writing">No Design Experience <br>Required!</h2><img src="images/blackFridaySticker-ballon-2.svg" loading="lazy" alt="" id="w-node-b1383034-7da8-6a88-abe0-d5684b6225e5-d42a6986" width="70" class="lp-sticker">
         </div>
-        <div class="lp-text-semibold-18 lp-text-gradient homepage-description">This Black Friday, we are offering special discounted lifetime deals and <a href="#">bundles</a> for Ken Moo&#x27;s SaaS Lifetime Deals Community!</div>
-        <div class="lp-text-semibold-18 lp-text-gradient homepage-description">Create your brand today with our one-of-a-kind logo design tool. Design your logo, color palettes, typography system, and a beautiful sharable brand guideline with ease and confidence, all inside Typogram.</div>
+        <div class="lp-text-semibold-18 lp-text-gradient homepage-description">Designing brand kits has never been easier! <br><br>Create your logo, color palettes, typography system, and a beautiful, sharable brand guideline with ease and confidence, all inside Typogram, our one-of-a-kind logo design tool.</div>
+        <div id="w-node-dcde2b27-5b20-1367-890a-f6954feaec1c-d42a6986" class="div-block-4">
+          <div class="html-embed w-embed">
+            <a href="https://www.producthunt.com/posts/typogram-2?utm_source=badge-top-post-topic-badge&utm_medium=badge&utm_souce=badge-typogram&#0045;2" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-topic-badge.svg?post_id=389462&theme=light&period=weekly&topic_id=44" alt="Typogram - DIY&#0032;tool&#0032;for&#0032;logo&#0032;and&#0032;branding | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54"></a>
+          </div>
+          <div class="html-embed-2 w-embed">
+            <a href="https://www.producthunt.com/posts/typogram-2?utm_source=badge-top-post-topic-badge&utm_medium=badge&utm_souce=badge-typogram&#0045;2" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-topic-badge.svg?post_id=389462&theme=light&period=weekly&topic_id=164" alt="Typogram - DIY&#0032;tool&#0032;for&#0032;logo&#0032;and&#0032;branding | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54"></a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -89,7 +154,7 @@ gtag('config', 'G-FG731W2C09');
         <div id="w-node-_7c116454-9927-b450-2673-1c1723b8f16b-d42a6986" class="lp-pricing-header">
           <h3 id="w-node-_7bc3348b-c6ca-7526-5106-efe2858b022b-d42a6986" class="lp-text-black-16-allcap">Our Black Friday Pricing Details</h3>
           <h2 id="w-node-_7bc3348b-c6ca-7526-5106-efe2858b022d-d42a6986" class="lp-text-black-36 lp-max-width-580">Pay once, use forever!</h2>
-          <h3 id="w-node-c3805d11-a8d1-f18d-9835-ea61fa04df7d-d42a6986" class="lp-text-semibold-18">Your license comes with lifetime access, future updates, prioritized customer support &amp; more!</h3>
+          <h3 id="w-node-c3805d11-a8d1-f18d-9835-ea61fa04df7d-d42a6986" class="lp-text-semibold-18">This Black Friday, we are offering special discounted lifetime deals and bundles for ★ Ken Moo&#x27;s SaaS Lifetime Deals Community. Your license comes with lifetime access, future updates, prioritized customer support &amp; more!</h3>
           <h3 id="w-node-_39e8b17f-3395-cc45-5c27-6f7b05fe0f16-d42a6986" class="lp-text-black-16-allcap lp-hidden">remaining time</h3>
           <div id="w-node-_0d594841-23c3-b06d-93f4-d48d9b8c9182-d42a6986" class="lp-clock lp-hidden">
             <div class="lp-time">
@@ -122,7 +187,7 @@ gtag('config', 'G-FG731W2C09');
               <div class="lp-text-black-36 lp-text-gradient">$74.99<br></div>
             </div>
             <div class="lp-divider"></div>
-            <div class="lp-text-semibold-12">LIMITED SUPPLIES<br>LEFT!<br></div>
+            <div class="lp-text-semibold-12">ONLY 200 LEFT!<br></div>
           </div>
           <p class="lp-text-semibold-18">Perfect for your passion project, startup, or small business!</p>
           <div class="lp-feature-list">
@@ -209,6 +274,174 @@ gtag('config', 'G-FG731W2C09');
           <a data-w-id="9d933eb4-06d8-5e65-b967-e03447746a51" href="https://buy.stripe.com/6oE6oC5aN4p7d4A4gp" class="lp-button-primary">Get the biz Bundle</a>
           <div class="lp-button-pricing">
             <div class="lp-text-extrabold-36 lp-text-rotated-badge">60%<br>OFF</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="Testimonials" class="lp-section">
+    <div class="lp-container">
+      <div id="Testimonials" class="lp-wrapper-testimonials">
+        <h3 class="lp-text-black-16-allcap lp-text-gradient">Testimonials</h3>
+        <h2 class="lp-text-black-36">What our customers are saying about us…</h2>
+      </div>
+      <div data-delay="4000" data-animation="slide" class="lp-slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="8" data-duration="300" data-infinite="true">
+        <div class="lp-slider-mask w-slider-mask">
+          <div class="slide w-slide">
+            <div class="slide-container">
+              <div class="lp-testimonial-one">
+                <div id="w-node-fe2815a3-d75b-9b85-bf25-c811bd36cc4b-d42a6986" class="lp-testimonial-photo"><img src="images/DreamKit.png" loading="lazy" sizes="(max-width: 479px) 100vw, (max-width: 767px) 29vw, 213.3249969482422px" srcset="images/DreamKit-p-500.png 500w, images/DreamKit.png 780w" alt="Picture of DreamKit’s Founder Marina Marmolejo"></div>
+                <div id="w-node-ad493187-826e-7999-8904-b4d27a6ed17d-d42a6986" class="lp-block-quote"><img src="images/LP-Quote.svg" loading="lazy" alt="Left Quotation Mark" class="lp-quote-left"><img src="images/LP-Quote.svg" loading="lazy" alt="Left Quotation Mark" class="lp-quote-right">
+                  <p class="lp-text-semibold-16">As a first-time founder, it can be overwhelming to create every aspect of your business. We used Typogram to effortlessly produce a design guide that captured every youthful aspect of DreamKit. It offsets the stress of looking for and working with a freelancer and we were able to launch Dreamkit to users right away.</p>
+                </div>
+                <div id="w-node-ad493187-826e-7999-8904-b4d27a6ed182-d42a6986" class="lp-testimonial-info">
+                  <h2 class="lp-text-black-28">Marina Marmolejo</h2>
+                  <p class="lp-text-semibold-16">Founder/Advisor</p>
+                  <p class="lp-text-semibold-16">DreamKit</p>
+                </div>
+                <a id="w-node-e7a65532-7154-1ece-212a-5734b7dd28fb-d42a6986" href="/brand-guidelines?brandName=DreamKit" target="_blank" class="lp-float-link w-inline-block">
+                  <h3 class="lp-text-black-18">View DreamKit’s Brand Kit</h3>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="slide w-slide">
+            <div class="slide-container">
+              <div class="lp-testimonial-two">
+                <div id="w-node-_090aec0b-038f-49f4-0bea-87d69c8453e2-d42a6986" class="lp-testimonial-photo"><img src="images/Spxng.png" loading="lazy" sizes="100vw" srcset="images/Spxng-p-500.png 500w, images/Spxng.png 720w" alt="Picture of Sprxng’s Founder Phyllis Mugadza"></div>
+                <div id="w-node-_090aec0b-038f-49f4-0bea-87d69c8453eb-d42a6986" class="lp-block-quote"><img src="images/LP-Quote.svg" loading="lazy" alt="Left Quotation Mark" class="lp-quote-left"><img src="images/LP-Quote.svg" loading="lazy" alt="Left Quotation Mark" class="lp-quote-right">
+                  <p class="lp-text-semibold-16">Typogram is an innovative tool that enabled me to unlock my creativity. With no prior experience in brand design, I was able to bring my brand’s vision to life as I immersed myself in Typogram&#x27;s guided, brand building experience.</p>
+                </div>
+                <div id="w-node-_090aec0b-038f-49f4-0bea-87d69c8453e4-d42a6986" class="lp-testimonial-info">
+                  <h2 class="lp-text-black-28">Phyllis Mugadza</h2>
+                  <p class="lp-text-semibold-16">Founder/CEO</p>
+                  <p class="lp-text-semibold-16">Sprxng</p>
+                </div>
+                <a id="w-node-ff48afb1-2621-ac82-827c-f5d52da5a564-d42a6986" href="/brand-guidelines?brandName=Sprxng" target="_blank" class="lp-float-link w-inline-block">
+                  <h3 class="lp-text-black-18">View Sprxng’s Brand Kit</h3>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="slide w-slide">
+            <div class="slide-container">
+              <div class="lp-testimonial-one">
+                <div id="w-node-_2f54fbf2-7f70-7465-794d-4f1fb4fc152c-d42a6986" class="lp-testimonial-photo"><img src="images/TomsFrozenPetTreats.png" loading="lazy" sizes="(max-width: 479px) 100vw, (max-width: 767px) 29vw, 213.3249969482422px" srcset="images/TomsFrozenPetTreats-p-500.png 500w, images/TomsFrozenPetTreats.png 780w" alt="Picture of Tom’s Frozen Pet Treats’ Founder Tamas Javor"></div>
+                <div id="w-node-_2f54fbf2-7f70-7465-794d-4f1fb4fc1535-d42a6986" class="lp-block-quote"><img src="images/LP-Quote.svg" loading="lazy" alt="Left Quotation Mark" class="lp-quote-left"><img src="images/LP-Quote.svg" loading="lazy" alt="Left Quotation Mark" class="lp-quote-right">
+                  <p class="lp-text-semibold-16">The Typogram team was extremely helpful and their process is flawless. After using Typogram, I was able to walk away with a brand kit that helped me launch my business.</p>
+                </div>
+                <div id="w-node-_2f54fbf2-7f70-7465-794d-4f1fb4fc152e-d42a6986" class="lp-testimonial-info">
+                  <h2 class="lp-text-black-28">Tamas Javor</h2>
+                  <p class="lp-text-semibold-16">Founder</p>
+                  <p class="lp-text-semibold-16">Tom’s Frozen Pet Treats</p>
+                </div>
+                <a id="w-node-_25d1ec16-37e8-0c7c-b630-4e6d8b2ec7cb-d42a6986" href="/brand-guidelines?brandName=Tom’s%20Frozen%20Pet%20Treats" target="_blank" class="lp-float-link w-inline-block">
+                  <h3 class="lp-text-black-18">View Tom’s Frozen Pet Treats’s Brand Kit</h3>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="slide w-slide">
+            <div class="slide-container">
+              <div class="lp-testimonial-two">
+                <div id="w-node-_60212c2a-f75b-54d1-10a0-13fc8543574c-d42a6986" class="lp-testimonial-photo"><img src="images/RWReiki.png" loading="lazy" sizes="100vw" srcset="images/RWReiki-p-500.png 500w, images/RWReiki.png 720w" alt="Picture of Radiant Waves Reiki’s Founder Rupal Sankalia"></div>
+                <div id="w-node-_60212c2a-f75b-54d1-10a0-13fc85435755-d42a6986" class="lp-block-quote"><img src="images/LP-Quote.svg" loading="lazy" alt="Left Quotation Mark" class="lp-quote-left"><img src="images/LP-Quote.svg" loading="lazy" alt="Left Quotation Mark" class="lp-quote-right">
+                  <p class="lp-text-semibold-16">In starting my own Reiki practice, I needed help with branding but also wanted to be in control of the process. Typogram was incredibly easy to use. It has a fun and interactive system to guide you through the branding process. I walked away with a branding system that works for all of my needs (e.g. logo, color palettes, brand fonts, website, marketing collateral, etc.)</p>
+                </div>
+                <div id="w-node-_60212c2a-f75b-54d1-10a0-13fc8543574e-d42a6986" class="lp-testimonial-info">
+                  <h2 class="lp-text-black-28">Rupal Sankalia</h2>
+                  <p class="lp-text-semibold-16">Reiki Master Practitioner</p>
+                  <p class="lp-text-semibold-16">Radiant Waves Reiki</p>
+                </div>
+                <a id="w-node-_2073d16b-00b0-21ed-0d06-e85e53afa4f3-d42a6986" href="/brand-guidelines?brandName=Radiant%20Waves%20Reiki" target="_blank" class="lp-float-link w-inline-block">
+                  <h3 class="lp-text-black-18">View Radiant Waves Reiki’s Brand Kit</h3>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lp-button-testimonial-prev w-slider-arrow-left"><img src="images/LP-Button---Testimonials---Circle.svg" loading="lazy" alt=""></div>
+        <div class="lp-button-testimonial-next w-slider-arrow-right"><img src="images/LP-Button---Testimonials---Circle.svg" loading="lazy" alt=""></div>
+        <div class="lp-slide-nav w-slider-nav"></div>
+      </div>
+    </div>
+  </div>
+  <div class="lp-section lp-section-light">
+    <div class="lp-container">
+      <div class="lp-wrapper-key-benefits">
+        <div class="lp-benefit-header">
+          <h3 id="w-node-d33368d3-597a-43d2-2dae-9e7ce544007b-d42a6986" class="lp-text-black-16-allcap">our specialities</h3>
+          <h2 id="w-node-_96cd3c7e-6298-6c7f-e40f-ef2fbafc15c6-d42a6986" class="lp-text-black-36">Why people choose Typogram... </h2>
+          <h3 id="w-node-d33368d3-597a-43d2-2dae-9e7ce5440081-d42a6986" class="lp-text-black-16-allcap lp-hidden">remaining time</h3>
+          <div id="w-node-d33368d3-597a-43d2-2dae-9e7ce5440083-d42a6986" class="lp-clock lp-hidden">
+            <div class="lp-time">
+              <div class="lp-text-black-28">03</div>
+              <div class="lp-divider-pricing"></div>
+              <div class="lp-text-semibold-12">days</div>
+            </div>
+            <div class="lp-time">
+              <div class="lp-text-black-28">02</div>
+              <div class="lp-divider-pricing"></div>
+              <div class="lp-text-semibold-12">hours</div>
+            </div>
+            <div class="lp-time">
+              <div class="lp-text-black-28">09</div>
+              <div class="lp-divider-pricing"></div>
+              <div class="lp-text-semibold-12">minuted</div>
+            </div>
+            <div class="lp-time">
+              <div class="lp-text-black-28">18</div>
+              <div class="lp-divider-pricing"></div>
+              <div class="lp-text-semibold-12">seconds</div>
+            </div>
+          </div>
+        </div>
+        <div class="lp-container">
+          <div class="lp-benefit-table">
+            <div class="lp-benefit-table-cell">
+              <div class="lp-check-wrapper">
+                <div class="text-block-3">✓</div>
+              </div>
+              <div class="lp-benefit">
+                <div class="key-benefit">In-app learnings Materials</div>
+              </div>
+              <div class="lp-benefit-wrapper">
+                <div class="text-block">Gain expert design &amp; marketing knowledge – no more random generation!</div>
+              </div>
+            </div>
+            <div class="lp-benefit-table-cell">
+              <div class="lp-check-wrapper">
+                <div class="text-block-3">✓</div>
+              </div>
+              <div class="lp-benefit">
+                <div class="key-benefit">High-quality assets</div>
+              </div>
+              <div class="lp-benefit-wrapper">
+                <div class="text-block">Our proprietary editable icons are exclusive to Typogram. You won’t find them on other platforms.</div>
+              </div>
+            </div>
+            <div class="lp-benefit-table-cell">
+              <div class="lp-check-wrapper">
+                <div class="text-block-3">✓</div>
+              </div>
+              <div class="lp-benefit">
+                <div class="key-benefit">Easy logo editing</div>
+              </div>
+              <div class="lp-benefit-wrapper">
+                <div class="text-block">Custom features tailored just for logo creation, perfect for any beginners.</div>
+              </div>
+            </div>
+            <div class="lp-benefit-table-cell lp-benefit-table-no-border">
+              <div class="lp-check-wrapper">
+                <div class="text-block-3">✓</div>
+              </div>
+              <div class="lp-benefit">
+                <div class="key-benefit">Sharable Brand Guideline</div>
+              </div>
+              <div class="lp-benefit-wrapper">
+                <div class="text-block">Organize your brand guidelines easily in one place. Share your new brand easily with your collaborators.</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -360,174 +593,6 @@ gtag('config', 'G-FG731W2C09');
       </div>
     </div>
   </div>
-  <div id="Testimonials" class="lp-section">
-    <div class="lp-container">
-      <div id="Testimonials" class="lp-wrapper-testimonials">
-        <h3 class="lp-text-black-16-allcap lp-text-gradient">Testimonials</h3>
-        <h2 class="lp-text-black-36">What our customers are saying about us…</h2>
-      </div>
-      <div data-delay="4000" data-animation="slide" class="lp-slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="8" data-duration="300" data-infinite="true">
-        <div class="lp-slider-mask w-slider-mask">
-          <div class="slide w-slide">
-            <div class="slide-container">
-              <div class="lp-testimonial-one">
-                <div id="w-node-fe2815a3-d75b-9b85-bf25-c811bd36cc4b-d42a6986" class="lp-testimonial-photo"><img src="images/DreamKit.png" loading="lazy" sizes="(max-width: 479px) 100vw, (max-width: 767px) 29vw, 213.33334350585938px" srcset="images/DreamKit-p-500.png 500w, images/DreamKit.png 780w" alt="Picture of DreamKit’s Founder Marina Marmolejo"></div>
-                <div id="w-node-ad493187-826e-7999-8904-b4d27a6ed17d-d42a6986" class="lp-block-quote"><img src="images/LP-Quote.svg" loading="lazy" alt="Left Quotation Mark" class="lp-quote-left"><img src="images/LP-Quote.svg" loading="lazy" alt="Left Quotation Mark" class="lp-quote-right">
-                  <p class="lp-text-semibold-16">As a first-time founder, it can be overwhelming to create every aspect of your business. We used Typogram to effortlessly produce a design guide that captured every youthful aspect of DreamKit. It offsets the stress of looking for and working with a freelancer and we were able to launch Dreamkit to users right away.</p>
-                </div>
-                <div id="w-node-ad493187-826e-7999-8904-b4d27a6ed182-d42a6986" class="lp-testimonial-info">
-                  <h2 class="lp-text-black-28">Marina Marmolejo</h2>
-                  <p class="lp-text-semibold-16">Founder/Advisor</p>
-                  <p class="lp-text-semibold-16">DreamKit</p>
-                </div>
-                <a id="w-node-e7a65532-7154-1ece-212a-5734b7dd28fb-d42a6986" href="/brand-guidelines?brandName=DreamKit" target="_blank" class="lp-float-link w-inline-block">
-                  <h3 class="lp-text-black-18">View DreamKit’s Brand Kit</h3>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="slide w-slide">
-            <div class="slide-container">
-              <div class="lp-testimonial-two">
-                <div id="w-node-_090aec0b-038f-49f4-0bea-87d69c8453e2-d42a6986" class="lp-testimonial-photo"><img src="images/Spxng.png" loading="lazy" sizes="100vw" srcset="images/Spxng-p-500.png 500w, images/Spxng.png 720w" alt="Picture of Sprxng’s Founder Phyllis Mugadza"></div>
-                <div id="w-node-_090aec0b-038f-49f4-0bea-87d69c8453eb-d42a6986" class="lp-block-quote"><img src="images/LP-Quote.svg" loading="lazy" alt="Left Quotation Mark" class="lp-quote-left"><img src="images/LP-Quote.svg" loading="lazy" alt="Left Quotation Mark" class="lp-quote-right">
-                  <p class="lp-text-semibold-16">Typogram is an innovative tool that enabled me to unlock my creativity. With no prior experience in brand design, I was able to bring my brand’s vision to life as I immersed myself in Typogram&#x27;s guided, brand building experience.</p>
-                </div>
-                <div id="w-node-_090aec0b-038f-49f4-0bea-87d69c8453e4-d42a6986" class="lp-testimonial-info">
-                  <h2 class="lp-text-black-28">Phyllis Mugadza</h2>
-                  <p class="lp-text-semibold-16">Founder/CEO</p>
-                  <p class="lp-text-semibold-16">Sprxng</p>
-                </div>
-                <a id="w-node-ff48afb1-2621-ac82-827c-f5d52da5a564-d42a6986" href="/brand-guidelines?brandName=Sprxng" target="_blank" class="lp-float-link w-inline-block">
-                  <h3 class="lp-text-black-18">View Sprxng’s Brand Kit</h3>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="slide w-slide">
-            <div class="slide-container">
-              <div class="lp-testimonial-one">
-                <div id="w-node-_2f54fbf2-7f70-7465-794d-4f1fb4fc152c-d42a6986" class="lp-testimonial-photo"><img src="images/TomsFrozenPetTreats.png" loading="lazy" sizes="(max-width: 479px) 100vw, (max-width: 767px) 29vw, 213.33334350585938px" srcset="images/TomsFrozenPetTreats-p-500.png 500w, images/TomsFrozenPetTreats.png 780w" alt="Picture of Tom’s Frozen Pet Treats’ Founder Tamas Javor"></div>
-                <div id="w-node-_2f54fbf2-7f70-7465-794d-4f1fb4fc1535-d42a6986" class="lp-block-quote"><img src="images/LP-Quote.svg" loading="lazy" alt="Left Quotation Mark" class="lp-quote-left"><img src="images/LP-Quote.svg" loading="lazy" alt="Left Quotation Mark" class="lp-quote-right">
-                  <p class="lp-text-semibold-16">The Typogram team was extremely helpful and their process is flawless. After using Typogram, I was able to walk away with a brand kit that helped me launch my business.</p>
-                </div>
-                <div id="w-node-_2f54fbf2-7f70-7465-794d-4f1fb4fc152e-d42a6986" class="lp-testimonial-info">
-                  <h2 class="lp-text-black-28">Tamas Javor</h2>
-                  <p class="lp-text-semibold-16">Founder</p>
-                  <p class="lp-text-semibold-16">Tom’s Frozen Pet Treats</p>
-                </div>
-                <a id="w-node-_25d1ec16-37e8-0c7c-b630-4e6d8b2ec7cb-d42a6986" href="/brand-guidelines?brandName=Tom’s%20Frozen%20Pet%20Treats" target="_blank" class="lp-float-link w-inline-block">
-                  <h3 class="lp-text-black-18">View Tom’s Frozen Pet Treats’s Brand Kit</h3>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="slide w-slide">
-            <div class="slide-container">
-              <div class="lp-testimonial-two">
-                <div id="w-node-_60212c2a-f75b-54d1-10a0-13fc8543574c-d42a6986" class="lp-testimonial-photo"><img src="images/RWReiki.png" loading="lazy" sizes="100vw" srcset="images/RWReiki-p-500.png 500w, images/RWReiki.png 720w" alt="Picture of Radiant Waves Reiki’s Founder Rupal Sankalia"></div>
-                <div id="w-node-_60212c2a-f75b-54d1-10a0-13fc85435755-d42a6986" class="lp-block-quote"><img src="images/LP-Quote.svg" loading="lazy" alt="Left Quotation Mark" class="lp-quote-left"><img src="images/LP-Quote.svg" loading="lazy" alt="Left Quotation Mark" class="lp-quote-right">
-                  <p class="lp-text-semibold-16">In starting my own Reiki practice, I needed help with branding but also wanted to be in control of the process. Typogram was incredibly easy to use. It has a fun and interactive system to guide you through the branding process. I walked away with a branding system that works for all of my needs (e.g. logo, color palettes, brand fonts, website, marketing collateral, etc.)</p>
-                </div>
-                <div id="w-node-_60212c2a-f75b-54d1-10a0-13fc8543574e-d42a6986" class="lp-testimonial-info">
-                  <h2 class="lp-text-black-28">Rupal Sankalia</h2>
-                  <p class="lp-text-semibold-16">Reiki Master Practitioner</p>
-                  <p class="lp-text-semibold-16">Radiant Waves Reiki</p>
-                </div>
-                <a id="w-node-_2073d16b-00b0-21ed-0d06-e85e53afa4f3-d42a6986" href="/brand-guidelines?brandName=Radiant%20Waves%20Reiki" target="_blank" class="lp-float-link w-inline-block">
-                  <h3 class="lp-text-black-18">View Radiant Waves Reiki’s Brand Kit</h3>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="lp-button-testimonial-prev w-slider-arrow-left"><img src="images/LP-Button---Testimonials---Circle.svg" loading="lazy" alt=""></div>
-        <div class="lp-button-testimonial-next w-slider-arrow-right"><img src="images/LP-Button---Testimonials---Circle.svg" loading="lazy" alt=""></div>
-        <div class="lp-slide-nav w-slider-nav"></div>
-      </div>
-    </div>
-  </div>
-  <div class="lp-section lp-section-light">
-    <div class="lp-container">
-      <div class="lp-wrapper-key-benefits">
-        <div class="lp-benefit-header">
-          <h3 id="w-node-d33368d3-597a-43d2-2dae-9e7ce544007b-d42a6986" class="lp-text-black-16-allcap">our specialities</h3>
-          <h2 id="w-node-_96cd3c7e-6298-6c7f-e40f-ef2fbafc15c6-d42a6986" class="lp-text-black-36">Why people choose Typogram... </h2>
-          <h3 id="w-node-d33368d3-597a-43d2-2dae-9e7ce5440081-d42a6986" class="lp-text-black-16-allcap lp-hidden">remaining time</h3>
-          <div id="w-node-d33368d3-597a-43d2-2dae-9e7ce5440083-d42a6986" class="lp-clock lp-hidden">
-            <div class="lp-time">
-              <div class="lp-text-black-28">03</div>
-              <div class="lp-divider-pricing"></div>
-              <div class="lp-text-semibold-12">days</div>
-            </div>
-            <div class="lp-time">
-              <div class="lp-text-black-28">02</div>
-              <div class="lp-divider-pricing"></div>
-              <div class="lp-text-semibold-12">hours</div>
-            </div>
-            <div class="lp-time">
-              <div class="lp-text-black-28">09</div>
-              <div class="lp-divider-pricing"></div>
-              <div class="lp-text-semibold-12">minuted</div>
-            </div>
-            <div class="lp-time">
-              <div class="lp-text-black-28">18</div>
-              <div class="lp-divider-pricing"></div>
-              <div class="lp-text-semibold-12">seconds</div>
-            </div>
-          </div>
-        </div>
-        <div class="lp-container">
-          <div class="lp-benefit-table">
-            <div class="lp-benefit-table-cell">
-              <div class="lp-check-wrapper">
-                <div class="text-block-3">✓</div>
-              </div>
-              <div class="lp-benefit">
-                <div class="key-benefit">In-app learnings Materials</div>
-              </div>
-              <div class="lp-benefit-wrapper">
-                <div class="text-block">Gain expert design &amp; marketing knowledge – no more random generation!</div>
-              </div>
-            </div>
-            <div class="lp-benefit-table-cell">
-              <div class="lp-check-wrapper">
-                <div class="text-block-3">✓</div>
-              </div>
-              <div class="lp-benefit">
-                <div class="key-benefit">High-quality assets</div>
-              </div>
-              <div class="lp-benefit-wrapper">
-                <div class="text-block">Our proprietary editable icons are exclusive to Typogram. You won’t find them on other platforms.</div>
-              </div>
-            </div>
-            <div class="lp-benefit-table-cell">
-              <div class="lp-check-wrapper">
-                <div class="text-block-3">✓</div>
-              </div>
-              <div class="lp-benefit">
-                <div class="key-benefit">Easy logo editing</div>
-              </div>
-              <div class="lp-benefit-wrapper">
-                <div class="text-block">Custom features tailored just for logo creation, perfect for any beginners.</div>
-              </div>
-            </div>
-            <div class="lp-benefit-table-cell lp-benefit-table-no-border">
-              <div class="lp-check-wrapper">
-                <div class="text-block-3">✓</div>
-              </div>
-              <div class="lp-benefit">
-                <div class="key-benefit">Sharable Brand Guideline</div>
-              </div>
-              <div class="lp-benefit-wrapper">
-                <div class="text-block">Organize your brand guidelines easily in one place. Share your new brand easily with your collaborators.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
   <div id="Showcase" class="lp-section">
     <div class="lp-container">
       <div class="lp-showcase-header">
@@ -538,42 +603,42 @@ gtag('config', 'G-FG731W2C09');
       <div data-delay="4000" data-animation="slide" class="lp-slider w-slider" data-autoplay="false" data-easing="ease" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="8" data-duration="300" data-infinite="true">
         <div class="lp-slider-mask w-slider-mask">
           <div class="slide w-slide">
-            <div class="slide-container"><img src="images/gallery-0.png" width="1039" sizes="(max-width: 479px) 92vw, (max-width: 767px) 95vw, (max-width: 1279px) 96vw, 1038.9931640625px" srcset="images/gallery-0-p-500.png 500w, images/gallery-0-p-800.png 800w, images/gallery-0-p-1080.png 1080w, images/gallery-0-p-1600.png 1600w, images/gallery-0-p-2000.png 2000w, images/gallery-0-p-2600.png 2600w, images/gallery-0-p-3200.png 3200w, images/gallery-0.png 3572w" alt="Branding Materials of DreamKit">
+            <div class="slide-container"><img src="images/gallery-0.png" width="1039" sizes="(max-width: 479px) 92vw, (max-width: 767px) 95vw, (max-width: 1279px) 96vw, 1039px" srcset="images/gallery-0-p-500.png 500w, images/gallery-0-p-800.png 800w, images/gallery-0-p-1080.png 1080w, images/gallery-0-p-1600.png 1600w, images/gallery-0-p-2000.png 2000w, images/gallery-0-p-2600.png 2600w, images/gallery-0-p-3200.png 3200w, images/gallery-0.png 3572w" alt="Branding Materials of DreamKit">
               <a href="/brand-guidelines?brandName=DreamKit" target="_blank" class="lp-float-link lp-float-link-showcase w-inline-block">
                 <h3 class="lp-text-black-18">View DreamKit’s Brand Kit</h3>
               </a>
             </div>
           </div>
           <div class="slide w-slide">
-            <div class="slide-container"><img src="images/gallery-1.png" width="1051" sizes="(max-width: 479px) 92vw, (max-width: 767px) 95vw, (max-width: 1279px) 96vw, 1050.9896240234375px" srcset="images/gallery-1-p-500.png 500w, images/gallery-1-p-800.png 800w, images/gallery-1-p-1080.png 1080w, images/gallery-1-p-1600.png 1600w, images/gallery-1.png 3572w" alt="Branding Materials of Radiant Waves Reiki">
+            <div class="slide-container"><img src="images/gallery-1.png" width="1051" sizes="(max-width: 479px) 92vw, (max-width: 767px) 95vw, (max-width: 1279px) 96vw, 1051px" srcset="images/gallery-1-p-500.png 500w, images/gallery-1-p-800.png 800w, images/gallery-1-p-1080.png 1080w, images/gallery-1-p-1600.png 1600w, images/gallery-1.png 3572w" alt="Branding Materials of Radiant Waves Reiki">
               <a href="/brand-guidelines?brandName=Radiant%20Waves%20Reiki" target="_blank" class="lp-float-link lp-float-link-showcase w-inline-block">
                 <h3 class="lp-text-black-18">View Radiant Waves Reiki’s Brand Kit</h3>
               </a>
             </div>
           </div>
           <div class="slide w-slide">
-            <div class="slide-container"><img src="images/gallery-3_1.png" width="1013" sizes="(max-width: 479px) 92vw, (max-width: 767px) 95vw, (max-width: 1279px) 96vw, 1012.9861450195312px" srcset="images/gallery-3_1-p-500.png 500w, images/gallery-3_1-p-800.png 800w, images/gallery-3_1-p-1080.png 1080w, images/gallery-3_1-p-1600.png 1600w, images/gallery-3_1-p-2000.png 2000w, images/gallery-3_1-p-2600.png 2600w, images/gallery-3_1-p-3200.png 3200w, images/gallery-3_1.png 3572w" alt="Branding Materials of Tom’s Frozen Pet Treats">
+            <div class="slide-container"><img src="images/gallery-3_1.png" width="1013" sizes="(max-width: 479px) 92vw, (max-width: 767px) 95vw, (max-width: 1279px) 96vw, 1013px" srcset="images/gallery-3_1-p-500.png 500w, images/gallery-3_1-p-800.png 800w, images/gallery-3_1-p-1080.png 1080w, images/gallery-3_1-p-1600.png 1600w, images/gallery-3_1-p-2000.png 2000w, images/gallery-3_1-p-2600.png 2600w, images/gallery-3_1-p-3200.png 3200w, images/gallery-3_1.png 3572w" alt="Branding Materials of Tom’s Frozen Pet Treats">
               <a href="/brand-guidelines?brandName=Tom’s%20Frozen%20Pet%20Treats" target="_blank" class="lp-float-link lp-float-link-showcase w-inline-block">
                 <h3 class="lp-text-black-18">View Tom’s Frozen Pet Treats’s Brand Kit</h3>
               </a>
             </div>
           </div>
           <div class="slide w-slide">
-            <div class="slide-container"><img src="images/gallery-4_1.png" width="1013" sizes="(max-width: 479px) 92vw, (max-width: 767px) 95vw, (max-width: 1279px) 96vw, 1012.9861450195312px" srcset="images/gallery-4_1-p-500.png 500w, images/gallery-4_1-p-800.png 800w, images/gallery-4_1-p-1080.png 1080w, images/gallery-4_1-p-1600.png 1600w, images/gallery-4_1-p-2000.png 2000w, images/gallery-4_1.png 3572w" alt="Branding Materials of Sprxng">
+            <div class="slide-container"><img src="images/gallery-4_1.png" width="1013" sizes="(max-width: 479px) 92vw, (max-width: 767px) 95vw, (max-width: 1279px) 96vw, 1013px" srcset="images/gallery-4_1-p-500.png 500w, images/gallery-4_1-p-800.png 800w, images/gallery-4_1-p-1080.png 1080w, images/gallery-4_1-p-1600.png 1600w, images/gallery-4_1-p-2000.png 2000w, images/gallery-4_1.png 3572w" alt="Branding Materials of Sprxng">
               <a href="/brand-guidelines?brandName=Sprxng" target="_blank" class="lp-float-link lp-float-link-showcase w-inline-block">
                 <h3 class="lp-text-black-18">View Sprxng’s Brand Kit</h3>
               </a>
             </div>
           </div>
           <div class="slide w-slide">
-            <div class="slide-container"><img src="images/gallery-4.png" width="1013" sizes="(max-width: 479px) 92vw, (max-width: 767px) 95vw, (max-width: 1279px) 96vw, 1012.9861450195312px" srcset="images/gallery-4-p-500.png 500w, images/gallery-4-p-800.png 800w, images/gallery-4-p-1080.png 1080w, images/gallery-4-p-1600.png 1600w, images/gallery-4.png 1787w" alt="Branding Materials of Laced">
+            <div class="slide-container"><img src="images/gallery-4.png" width="1013" sizes="(max-width: 479px) 92vw, (max-width: 767px) 95vw, (max-width: 1279px) 96vw, 1013px" srcset="images/gallery-4-p-500.png 500w, images/gallery-4-p-800.png 800w, images/gallery-4-p-1080.png 1080w, images/gallery-4-p-1600.png 1600w, images/gallery-4.png 1787w" alt="Branding Materials of Laced">
               <a href="/brand-guidelines?brandName=Laced" target="_blank" class="lp-float-link lp-float-link-showcase w-inline-block">
                 <h3 class="lp-text-black-18">View Laced’s Brand Kit</h3>
               </a>
             </div>
           </div>
           <div class="slide w-slide">
-            <div class="slide-container"><img src="images/gallery-3.png" width="1013" sizes="(max-width: 479px) 92vw, (max-width: 767px) 95vw, (max-width: 1279px) 96vw, 1012.9861450195312px" srcset="images/gallery-3-p-500.png 500w, images/gallery-3-p-800.png 800w, images/gallery-3-p-1080.png 1080w, images/gallery-3-p-1600.png 1600w, images/gallery-3.png 1787w" alt="Branding Materials of Gathr">
+            <div class="slide-container"><img src="images/gallery-3.png" width="1013" sizes="(max-width: 479px) 92vw, (max-width: 767px) 95vw, (max-width: 1279px) 96vw, 1013px" srcset="images/gallery-3-p-500.png 500w, images/gallery-3-p-800.png 800w, images/gallery-3-p-1080.png 1080w, images/gallery-3-p-1600.png 1600w, images/gallery-3.png 1787w" alt="Branding Materials of Gathr">
               <a href="/brand-guidelines?brandName=gathr" target="_blank" class="lp-float-link lp-float-link-showcase w-inline-block">
                 <h3 class="lp-text-black-18">View Gathr’s Brand Kit</h3>
               </a>
@@ -608,6 +673,8 @@ gtag('config', 'G-FG731W2C09');
   </div>
   <div id="Video" class="lp-section">
     <div class="lp-container">
+      <h3 class="lp-text-black-16-allcap lp-heading-extra-margin">What is Typogram</h3>
+      <h2 class="lp-text-black-36">A logo design tool inspiring creativity &amp; curiosity</h2>
       <div class="lp-wrapper-video video-section"><img src="images/LP---Graphic---Typogram.png" loading="lazy" alt="Typogram">
         <div id="w-node-_7e695dc0-187c-2d85-bef5-456a7f86741d-d42a6986" data-w-id="7e695dc0-187c-2d85-bef5-456a7f86741d" class="lp-video">
           <div style="padding-top:56.17021276595745%" class="w-embed-youtubevideo"><iframe src="https://www.youtube.com/embed/7PHHaLh1zNU?rel=0&amp;controls=1&amp;autoplay=0&amp;mute=0&amp;start=0" frameborder="0" style="position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:auto" allow="autoplay; encrypted-media" allowfullscreen="" title="Introducing Typogram - The Next-generation Brand Design Tool"></iframe></div>
@@ -617,29 +684,31 @@ gtag('config', 'G-FG731W2C09');
   </div>
   <div id="Features" class="lp-section lp-section-light">
     <div class="lp-container">
+      <h3 class="lp-text-black-16-allcap lp-heading-extra-margin">Design Curious?</h3>
+      <h2 class="lp-text-black-36">With our features, design is easy.</h2>
       <div class="lp-wrapper-features"><img src="images/Editable-Icon.gif" loading="lazy" alt="">
         <div class="lp-feature-description state-right">
-          <h4 class="lp-text-black-16-allcap">Feature</h4>
+          <h4 class="lp-text-black-16-allcap">Typogram&#x27;s ❤ feature</h4>
           <div class="lp-text-black-36">Editable Icon</div>
           <p class="lp-text-semibold-18">A proprietary technology exclusively available on Typogram, enabling endless icon customization with a simple slider-based interface.</p>
         </div><img src="images/Swap-with-Icon.gif" loading="lazy" id="w-node-_2fc9c48b-307b-4027-3e83-0d810e93871d-d42a6986" alt="">
         <div class="lp-feature-description state-left">
-          <h4 class="lp-text-black-16-allcap">Feature</h4>
+          <h4 class="lp-text-black-16-allcap">Startup Founder&#x27;s ❤ Feature</h4>
           <div class="lp-text-black-36">Swap with Icon</div>
           <p class="lp-text-semibold-18">Replace letters or sub-letter shapes with icons, adding a creative touch to your logo designs. Search &amp; import your own icons, and customize brand identity with ease.</p>
         </div><img src="images/Sub-Letter-Fill-Color.gif" loading="lazy" alt="">
         <div class="lp-feature-description state-right">
-          <h4 class="lp-text-black-16-allcap">Feature</h4>
+          <h4 class="lp-text-black-16-allcap">Creator&#x27;s ❤ Feature</h4>
           <div class="lp-text-black-36">Sub-Letter Fill-Color</div>
           <p class="lp-text-semibold-18">Fill individual shapes within a letter with different colors without breaking down or converting the letter to outlines, unlike other apps that require destructive conversion.</p>
         </div><img src="images/Print-Guidelines-as-PDF.gif" loading="lazy" id="w-node-_33799afa-acdb-f786-9d33-f9837f2a615c-d42a6986" alt="">
         <div class="lp-feature-description state-left">
-          <h4 class="lp-text-black-16-allcap">Feature</h4>
+          <h4 class="lp-text-black-16-allcap">Agency owner&#x27;s ❤ Feature</h4>
           <div class="lp-text-black-36">Print Brand Guidelines as PDF</div>
           <p class="lp-text-semibold-18">Publish your brand design as a brand guidelines website and also print them as a professional PDF document for easy sharing. This ensures consistent and effective communication of your brand design.</p>
         </div><img src="images/Undo-Redo.gif" loading="lazy" alt="">
         <div class="lp-feature-description state-right">
-          <h4 class="lp-text-black-16-allcap">And more</h4>
+          <h4 class="lp-text-black-16-allcap">And more ❤</h4>
           <div class="lp-text-black-36">Beautifully Crafted UX Details</div>
           <p class="lp-text-semibold-18">Undo/Redo feature is just one example of the care and love that went into crafting Typogram. Designed and developed by award-winning designers, Typogram boasts many beautifully crafted UX details.</p>
         </div>
